@@ -1,5 +1,6 @@
 <?php
 
+// Edite os links abaixo.
 $arrayDeLinks = [
   "https://brc3.com.br/link-01",
   "https://brc3.com.br/link-02",
