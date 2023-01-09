@@ -11,3 +11,5 @@ require_once('functions.php');
 
 // Abaixo crie a sua lógica:
 echo "Redireciona para: ". $gerarLink;
+
+// Para direcionar use: header('Location: '.$gerarLink);
