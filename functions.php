@@ -22,3 +22,17 @@ function trocarPosicao($ultimoLink, $arrayDeLinks) {
   
   return $arrayDeLinks[$proximo];
 }
+
+function registro_log($texto) {
+  if(!is_dir(__DIR__.'/logs/'.date('d-m-Y'))) {
+    mkdir(__DIR__.'/logs/'.date('d-m-Y'), 0777, true);
+  }
+
+  if(!file_exists(__DIR__.'/logs/'.date('d-m-Y').'/log.txt')) {
+    fopen(__DIR__.'/logs/'.date('d-m-Y').'/log.txt','w');
+  }
+  
+  $texto = $texto."\r\n";
+  file_put_contents(__DIR__.'/logs/'.date('d-m-Y').'/log.txt', $texto, FILE_APPEND);
+}
+

@@ -10,6 +10,9 @@ $arrayDeLinks = [
 
 require_once('functions.php');
 
+// Registro de log
+//registro_log(date('d/m/Y').', '.date('H:i:s').', '.$gerarLink);
+
 // Abaixo crie a sua lógica:
 echo "Redireciona para: ". $gerarLink;
 
