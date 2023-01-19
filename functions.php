@@ -28,11 +28,12 @@ function registro_log($texto) {
     mkdir(__DIR__.'/logs/'.date('d-m-Y'), 0777, true);
   }
 
-  if(!file_exists(__DIR__.'/logs/'.date('d-m-Y').'/log.txt')) {
-    fopen(__DIR__.'/logs/'.date('d-m-Y').'/log.txt','w');
+  if(!file_exists(__DIR__.'/logs/'.date('d-m-Y').'/log.csv')) {
+    fopen(__DIR__.'/logs/'.date('d-m-Y').'/log.csv','w');
+    file_put_contents(__DIR__.'/logs/'.date('d-m-Y').'/log.csv', "data,hora,valor\r\n", FILE_APPEND);
   }
   
   $texto = $texto."\r\n";
-  file_put_contents(__DIR__.'/logs/'.date('d-m-Y').'/log.txt', $texto, FILE_APPEND);
+  file_put_contents(__DIR__.'/logs/'.date('d-m-Y').'/log.csv', $texto, FILE_APPEND);
 }
 
